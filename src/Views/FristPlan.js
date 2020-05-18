@@ -31,7 +31,7 @@ const DivPlan = styled.div`
 
     .content{
         padding: auto;
-        align-content: space-between;
+        align-content: center;
     }
 
     .content h1{
@@ -48,12 +48,8 @@ const DivPlan = styled.div`
 
     .cards{
         margin-top: 20px;
-        padding: 30px;
         text-align: center;
         display: block;
-        align-content: center;
-        align-items: center;
-        align-self: center;
     }
 
     @media screen and (min-width: 768px) {

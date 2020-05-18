@@ -8,6 +8,7 @@ import Modal from '../Components/Modal'
 import Login from '../Components/Login'
 
 import { connect } from 'react-redux'
+import Form from '../Components/Form'
 
  function Home(props) {
 
@@ -19,9 +20,14 @@ import { connect } from 'react-redux'
 
     return (
         <div>
-                    <Modal show={modal} close={showModal}>
-                        <Login/>
-                    </Modal>
+            <Modal show={modal} close={showModal}>
+                {
+                    props.login ?
+                    <Form/>
+                    :
+                    <Login/>
+                }
+            </Modal>
             <DivHome>
                 <div className="boar">
                     <img src={fit} alt="Beach resort" className="image"/>

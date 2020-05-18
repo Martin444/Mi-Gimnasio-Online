@@ -15,10 +15,10 @@ export default function CardClass({title, image, onChannge}) {
 
 
 const DivCard = styled.div`
-    width: 350px;
+    width: 250px;
     height: 420px;
     background: #fff;
-    margin-left: 19%;
+    margin-left: 15%;
     margin-top: 10%;
     border-radius: 30px;
     -webkit-box-shadow: 3px 6px 45px -6px rgba(0,0,0,0.65);

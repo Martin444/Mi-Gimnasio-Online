@@ -3,16 +3,19 @@ import styled from 'styled-components'
 import { connect } from 'react-redux';
 import { auth, provider } from '../Utils/firebase';
 import { setUser, setLogin } from '../actions/index';
+import { withRouter } from 'react-router-dom'
 
 function Login(props) {
 
     const loginGoogle = () => {
         auth().signInWithPopup(provider)
           .then(({ user }) => {
-            console.log(user);
+            console.log(props);
             props.setUser(user);
             props.setLogin(true);
+            props.close();
             props.history.push('/clases');
+            // Aqui le vamos a agregar el registro a la base de datos
           })
           .catch((e)=> console.log(e))
       }
@@ -85,4 +88,4 @@ const mapDispatchToProps = {
     setLogin,
   }
   
-  export default connect(null, mapDispatchToProps)(Login);
+  export default withRouter(connect(null, mapDispatchToProps)(Login));

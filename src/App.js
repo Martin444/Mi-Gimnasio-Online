@@ -11,6 +11,7 @@ import { connect } from 'react-redux'
 import Modal from './Components/Modal'
 
 import Login from './Components/Login'
+import Form from './Components/Form';
 
 function App(props) {
 
@@ -30,10 +31,15 @@ function App(props) {
   })
   return (
     <div className="App">
-        <Navbar showModal={showModal}/>
-        <Modal show={modal} close={showModal}>
-                        <Login/>
-                    </Modal>
+              <Navbar showModal={showModal}/>
+          <Modal show={modal} close={showModal}>
+            {
+                props.login ? 
+                  <Form/>
+                  :
+                  <Login close={showModal}/>
+            }
+          </Modal>
           <Switch>
             <Route exact path= "/" component={Home} props={showModal}/>
             <Route exact path= "/clases" component={Classes}/>
@@ -48,4 +54,10 @@ const mapDispatchToProps = {
   setUser,
 }
 
-export default connect(null, mapDispatchToProps)(App);
+const mapStateToProps = state => {
+  return {
+      login: state.login
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

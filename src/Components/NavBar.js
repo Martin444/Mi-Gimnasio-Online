@@ -1,13 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 import styled from 'styled-components'
 // Imagenes
 import logo from '../images/LOGO.webp'
 // Iconos
 import {FaAlignRight} from 'react-icons/fa'
+import { setUser, setLogin } from '../actions/index';
+import { connect } from 'react-redux'
+import { auth } from '../Utils/firebase';
 
-export default function Navbar (props) {
+function Navbar (props) {
 
 
     const [isOpen, setIsOpen] = useState(false);
@@ -16,8 +19,18 @@ export default function Navbar (props) {
         setIsOpen(!isOpen);
     }
 
+    const logoutFacebook = () => {
+        auth().signOut()
+          .then(() => {
+            props.setUser({});
+            props.setLogin(false);
+            props.history.push('/')
+          });
+      }
+    
+
         return (
-            <NavBar>
+            <NavBar2>
                 <div className="nav-center">
                     <div className="nav-header">
                         <Link to="/">
@@ -30,25 +43,50 @@ export default function Navbar (props) {
                         </button>
                     </div>
                     <ul className={isOpen?"nav-links show-nav":"nav-links"}>
-                        <li>
-                            <Link to="/">Inicio</Link>
-                        </li>
-                        <li>
-                            <Link to="/clases">Clases</Link>
-                        </li>
-                        <li>
-                        <a onClick={props.showModal}>
-                            Formulario para Profesores
-                        </a>
-                        </li>
+                         <button type="button"  
+                        onClick={handleToggle}
+                        className="nav-btn2">
+                            <li>
+                                <Link to="/">Inicio</Link>
+                            </li>
+                        </button>
+                        <button type="button"  
+                        onClick={handleToggle}
+                        className="nav-btn2">
+                            <li>
+                                <Link to="/clases">Clases</Link>
+                            </li>
+                        </button>
+                        <button type="button"  
+                        onClick={handleToggle}
+                        className="nav-btn2">
+                            <li>
+                            <a onClick={props.showModal}>
+                                Formulario para Profesores
+                            </a>
+                            </li>
+                        </button>
+                        {
+                            props.login &&
+                                <button type="button"  
+                                onClick={handleToggle}
+                                className="nav-btn2">
+                                    <li>
+                                    <a onClick={logoutFacebook}>
+                                        Cerrar sesión
+                                    </a>
+                                    </li>
+                                </button>
+
+                        }
                     </ul>
                 </div>
-            </NavBar>
+            </NavBar2>
         )
  
 }
 
-const NavBar = styled.div`
+const NavBar2 = styled.div`
         position: fixed;
         top: 0;
         left: 0;
@@ -67,6 +105,14 @@ const NavBar = styled.div`
             border: none;
             cursor: pointer;
             outline: none;
+            }
+            .nav-btn2 {
+                display:block;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                outline: none;
+                text-align:center;
             }
         .nav-icon {
             font-size: 1.5rem;
@@ -102,6 +148,14 @@ const NavBar = styled.div`
         @media screen and (min-width: 768px){
             .nav-btn {
                 display: none;
+
+            }
+            .nav-btn2 {
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                outline: none;
+                text-align:center;
             }
             .nav-center {
                 max-width: 1170px;
@@ -111,7 +165,7 @@ const NavBar = styled.div`
             .nav-links {
                 height: auto;
                 display: flex;
-                /* margin-left: 4rem; */
+                margin-left: 2rem;
             }
             .nav-links a {
                 margin: 0 1rem;
@@ -119,3 +173,15 @@ const NavBar = styled.div`
             }
         }
 `
+const mapDispatchToProps = {
+    setUser,
+    setLogin,
+  };
+
+const mapStateToProps = state => {
+    return {
+        login: state.login
+    }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Navbar));
