@@ -34,6 +34,7 @@ const DivCard = styled.div`
         height: 250px;
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
+        background-size: contain;
     }
 
     .btn-primary {

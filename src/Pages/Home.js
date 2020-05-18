@@ -33,7 +33,7 @@ import Form from '../Components/Form'
                     <img src={fit} alt="Beach resort" className="image"/>
                     <div className="content">
                         <h1>Mi Gimnasio Online</h1>
-                        <p>La nueva forma de mejorar tus entrenamientos desde tu casa con profecionales</p>
+                        <p>La nueva forma de mejorar tus entrenamientos desde tu casa con profesionales</p>
                         {
                             props.login ?
                             <a href="https://www.facebook.com/" target="_blank"> <button className="btn-primary">Contactar</button></a>

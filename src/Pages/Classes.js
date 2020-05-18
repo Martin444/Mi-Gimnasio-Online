@@ -3,6 +3,21 @@ import styled from 'styled-components'
 import Nov from '../images/banner1.jpg'
 import CardClass from '../Components/CardClass'
 import Pesas from '../images/pesas1.jpg'
+import Clasesmix from '../images/clasemix.webp'
+import Ritmos from '../images/ritmos.jpg'
+import ZumbaFit from '../images/zumbafit.jpg'
+import Tabata from '../images/tabata.jpg'
+import ZumbaGold from '../images/zumbagold.jpg'
+import Gap from '../images/gap.webp'
+import Pilates from '../images/pilates1.jpg'
+import Circuito from '../images/circuito.jpg'
+import Personal from '../images/personal.jpg'
+import Latino from '../images/latino.webp'
+import Circuito2 from '../images/circuito2.webp'
+import Rutina from '../images/rutina.webp'
+import Ritmos2 from '../images/ritmos2.jpg'
+import Ritmos3 from '../images/ritmos3.webp'
+import Esfera from '../images/esfera.webp'
 import { connect } from 'react-redux'
 
 
@@ -22,27 +37,27 @@ function Classes(props) {
                     <h1>Mira todas las clases que tenemos para ti</h1>
                 }
                  <div  className="class-items">
-                 <CardClass title="CLASES MIX" image={Pesas} onChannge={handleClick}/>
-                    <CardClass title="RITMOS" image={Pesas} onChannge={handleClick}/>
-                    <CardClass title="ZUMBA FITNESS" image={Pesas} onChannge={handleClick}/>
+                 <CardClass title="CLASES MIX" image={Clasesmix} onChannge={handleClick}/>
+                    <CardClass title="RITMOS" image={Ritmos} onChannge={handleClick}/>
+                    <CardClass title="ZUMBA FITNESS" image={ZumbaFit} onChannge={handleClick}/>
                  </div>
                  <div  className="class-items">
-                 <CardClass title="TABATA" image={Pesas} onChannge={handleClick}/>
-                    <CardClass title="ZUMBA GOLD" image={Pesas} onChannge={handleClick}/>
-                    <CardClass title="G.A.P LOCAL" image={Pesas} onChannge={handleClick}/>
+                 <CardClass title="TABATA" image={Tabata} onChannge={handleClick}/>
+                    <CardClass title="ZUMBA GOLD" image={ZumbaGold} onChannge={handleClick}/>
+                    <CardClass title="G.A.P LOCAL" image={Gap} onChannge={handleClick}/>
                  </div>
                  {
                      props.login ?
                      <div  className="class-items">
-                        <CardClass title="PILATES MAT" image={Pesas} onChannge={handleClick}/>
-                        <CardClass title="CIRCUITO DE FUERZA" image={Pesas} onChannge={handleClick}/>
-                        <CardClass title="PERSONAL TRAINER" image={Pesas} onChannge={handleClick}/>
-                        <CardClass title="LATINO" image={Pesas} onChannge={handleClick}/>
-                        <CardClass title="CIRCUITO INTERMITENTE" image={Pesas} onChannge={handleClick}/>
-                        <CardClass title="RUTINAS 100%" image={Pesas} onChannge={handleClick}/>
-                        <CardClass title="RITMOS LATINOS" image={Pesas} onChannge={handleClick}/>
-                        <CardClass title="RITMOS FIT ROTATIVOS" image={Pesas} onChannge={handleClick}/>
-                        <CardClass title="ESFERODINAMIA" image={Pesas} onChannge={handleClick}/>
+                        <CardClass title="PILATES MAT" image={Pilates} onChannge={handleClick}/>
+                        <CardClass title="CIRCUITO DE FUERZA" image={Circuito} onChannge={handleClick}/>
+                        <CardClass title="PERSONAL TRAINER" image={Personal} onChannge={handleClick}/>
+                        <CardClass title="LATINO" image={Latino} onChannge={handleClick}/>
+                        <CardClass title="CIRCUITO INTERMITENTE" image={Circuito2} onChannge={handleClick}/>
+                        <CardClass title="RUTINAS 100%" image={Rutina} onChannge={handleClick}/>
+                        <CardClass title="RITMOS LATINOS" image={Ritmos2} onChannge={handleClick}/>
+                        <CardClass title="RITMOS FIT ROTATIVOS" image={Ritmos3} onChannge={handleClick}/>
+                        <CardClass title="ESFERODINAMIA" image={Esfera} onChannge={handleClick}/>
                     </div>
                         
                     :
