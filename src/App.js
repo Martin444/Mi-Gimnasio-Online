@@ -9,6 +9,7 @@ import { auth } from './Utils/firebase'
 import { setUser, setLogin } from './actions/index'
 import { connect } from 'react-redux'
 import Modal from './Components/Modal'
+import { TranslatorProvider } from "react-translate";
 
 import Login from './Components/Login'
 import Form from './Components/Form';
@@ -30,22 +31,24 @@ function App(props) {
     });
   })
   return (
-    <div className="App">
-              <Navbar showModal={showModal}/>
-          <Modal show={modal} close={showModal}>
-            {
-                props.login ? 
-                  <Form/>
-                  :
-                  <Login close={showModal}/>
-            }
-          </Modal>
-          <Switch>
-            <Route exact path= "/" component={Home} props={showModal}/>
-            <Route exact path= "/clases" component={Classes}/>
-          </Switch>
-        <Footer/>
-    </div>
+    <TranslatorProvider>
+        <div className="App">
+                  <Navbar showModal={showModal}/>
+              <Modal show={modal} close={showModal}>
+                {
+                    props.login ? 
+                      <Form/>
+                      :
+                      <Login close={showModal}/>
+                }
+              </Modal>
+              <Switch>
+                <Route exact path= "/" component={Home} props={showModal}/>
+                <Route exact path= "/clases" component={Classes}/>
+              </Switch>
+            <Footer/>
+        </div>
+    </TranslatorProvider>
   );
 }
 
