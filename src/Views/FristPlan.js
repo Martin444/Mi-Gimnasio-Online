@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import CardClass from '../Components/CardClass'
 import Pesas from '../images/pesas1.jpg'
 
-export default function FristPlan() {
+export default function FristPlan(props) {
 
     const  handleClick = () => {
-        console.log("Hola");
+        props.close();
     };
 
     return (
@@ -15,7 +15,7 @@ export default function FristPlan() {
                 <h1>CLASES DISPONIBLES</h1>
                 <span>No pongas más excusas y elegí tu primera clase</span>
                 <div className="cards">
-                    <CardClass title="ENTRENAMIENTO FUNCIONAL" image={Pesas} onChannge={handleClick}/>
+                    <CardClass title="ENTRENAMIENTO FUNCIONAL" image={Pesas} onChannge={handleClick} close={props.close}/>
                     <CardClass title="CROSS TRAINING" image={Pesas} onChannge={handleClick}/>
                     <CardClass title="LOCALIZADA" image={Pesas} onChannge={handleClick}/>
                 </div>

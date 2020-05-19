@@ -10,9 +10,16 @@ export default function Footer() {
         <DivFooter>
             <h1>Contactanos</h1>
             <div className="btns-social">
-                <button className="btn-primary-wpp"><IoLogoWhatsapp className="nav-icon"/></button>
-                <button className="btn-primary-fb"><AiFillFacebook className="nav-icon"/></button>
-                <button className="btn-primary-ing"><AiFillInstagram className="nav-icon"/></button>
+                <a href="https://wa.me/5493415551866" target="_blanck">
+                    <button className="btn-primary-wpp"><IoLogoWhatsapp className="nav-icon"/></button>
+                </a>
+                <a href="https://www.facebook.com/laura.maidana.98" target="_blanck">
+                    <button className="btn-primary-fb"><AiFillFacebook className="nav-icon"/></button>
+                </a>
+                <a href="https://www.instagram.com/lauramaidanaok/" target="_blanck">
+                    <button className="btn-primary-ing"><AiFillInstagram className="nav-icon"/></button>
+                </a>
+                
             </div>
         </DivFooter>
     )

@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import Nov from '../images/banner1.jpg'
 import CardClass from '../Components/CardClass'
-import Pesas from '../images/pesas1.jpg'
 import Clasesmix from '../images/clasemix.webp'
 import Ritmos from '../images/ritmos.jpg'
 import ZumbaFit from '../images/zumbafit.jpg'
@@ -63,7 +62,6 @@ function Classes(props) {
                     :
                     <button className="btn-primary">Ver más</button>
                  }
-                 
             </DivClases>
         </div>
     )

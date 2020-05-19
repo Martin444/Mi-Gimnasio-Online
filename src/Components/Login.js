@@ -4,17 +4,31 @@ import { connect } from 'react-redux';
 import { auth, provider } from '../Utils/firebase';
 import { setUser, setLogin } from '../actions/index';
 import { withRouter } from 'react-router-dom'
+import { database } from '../Utils/firebase'
 
 function Login(props) {
 
     const loginGoogle = () => {
+        
         auth().signInWithPopup(provider)
           .then(({ user }) => {
-            console.log(props);
-            props.setUser(user);
-            props.setLogin(true);
+            const newDate = new Date().toISOString();
+
+        const data = {
+           'date': newDate,
+           'displayName' : user.displayName,
+           'email' : user.email,
+           'photoUrl' : user.photoURL,
+           'numberPhone' : user.phoneNumber
+            }
+            database.ref('users').push(data)
+            .then(() =>{
+                props.setUser(user);
+                props.setLogin(true);
+                props.history.push('/clases');
+            })
             props.close();
-            props.history.push('/clases');
+
             // Aqui le vamos a agregar el registro a la base de datos
           })
           .catch((e)=> console.log(e))

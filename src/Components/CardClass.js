@@ -1,13 +1,36 @@
 import React from 'react'
 
 import styled from 'styled-components'
+import { connect } from 'react-redux'
+import { database } from '../Utils/firebase'
 
-export default function CardClass({title, image, onChannge}) {
+ function CardClass(props) {
+
+    const handleBuy = () =>{
+        const newDate = new Date().toISOString();
+
+        const data = {
+            'date' : newDate,
+            'nameClase': props.title,
+            'profilePic':props.user.photoURL,
+            'userContact': props.user.email,
+            'userInterest': props.user.displayName,
+        }
+
+        database.ref('buys').push(data)
+    }
+
     return (
         <DivCard>
-            <img src={image}  alt="Foto del card"/>
-                <h2>{title}</h2>
-            <button className="btn-primary" onClick={onChannge}>Comprar</button>
+            <img src={props.image}  alt="Foto del card"/>
+                <h2>{props.title}</h2>
+                {
+                    props.login ?
+                    <a href="https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=132871041-c0f935a0-560d-4c03-a72b-438c11fb158f" target="_blanck"><button className="btn-primary" onClick={handleBuy}>Comprar</button></a>
+                    :
+                    <button className="btn-primary" onClick={props.close}>Comprar</button>
+
+                }
         </DivCard>
     )
 }
@@ -58,3 +81,11 @@ const DivCard = styled.div`
         margin-right: 7%;
     }
 `
+const mapStateToProps = state => {
+    return {
+        login: state.login,
+        user: state.user
+    }
+}
+
+export default connect(mapStateToProps)(CardClass);

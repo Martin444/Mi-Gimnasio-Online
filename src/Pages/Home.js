@@ -36,14 +36,14 @@ import Form from '../Components/Form'
                         <p>La nueva forma de mejorar tus entrenamientos desde tu casa con profesionales</p>
                         {
                             props.login ?
-                            <a href="https://www.facebook.com/" target="_blank"> <button className="btn-primary">Contactar</button></a>
+                            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"> <button className="btn-primary">Contactar</button></a>
                             :
                             <button className="btn-primary" onClick={showModal}>Registrarme</button>
                         }
                     </div>
                 </div>
             </DivHome>
-            <FristPlan/>
+            <FristPlan close={showModal}/>
         </div>
         
     )

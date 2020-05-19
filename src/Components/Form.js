@@ -1,14 +1,30 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { connect } from 'react-redux'
+import { database } from '../Utils/firebase'
 
-export default function Form() {
+function Form(props) {
 
-    const [petPhotom, setPetPhoto] = useState([]);
     const [sendForm, setSendForm] = useState(false);
 
     const handleSubmit = (event) =>{
         event.preventDefault();
+        const form = new FormData(event.target);
+        const newDate = new Date().toISOString();
         
+
+        const data = {
+          'date' : newDate,
+          'name': form.get('name'),
+          'description': form.get('description'),
+          'profilePic':props.user.photoURL,
+          'userContact': props.user.email,
+          'userName': props.user.displayName,
+      }
+
+      database.ref('forms').push(data)
+            .then(() => setSendForm(true))
+            .catch(() => setSendForm(false));
     }
 
     return (
@@ -19,7 +35,7 @@ export default function Form() {
             </div>
             {sendForm && 
             <div className="Form-send">
-                <span>Guardado con Exito!</span>
+                <span>Gracias {props.user.displayName}!! Nos comunicaremos con vos en cuanto tus datos sean procesados</span>
             </div>
             }
             {
@@ -126,3 +142,12 @@ box-shadow: 2px 3px 18px 1px rgba(101,101,102,1);
   font-size: 16px;
 }
 `
+
+const mapStateToProps = state => {
+  return {
+      user: state.user,
+  }
+
+}
+
+export default connect(mapStateToProps)(Form);

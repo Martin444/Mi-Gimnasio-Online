@@ -9,7 +9,7 @@ import { auth } from './Utils/firebase'
 import { setUser, setLogin } from './actions/index'
 import { connect } from 'react-redux'
 import Modal from './Components/Modal'
-import { TranslatorProvider } from "react-translate";
+
 
 import Login from './Components/Login'
 import Form from './Components/Form';
@@ -31,7 +31,7 @@ function App(props) {
     });
   })
   return (
-    <TranslatorProvider>
+ 
         <div className="App">
                   <Navbar showModal={showModal}/>
               <Modal show={modal} close={showModal}>
@@ -48,7 +48,7 @@ function App(props) {
               </Switch>
             <Footer/>
         </div>
-    </TranslatorProvider>
+
   );
 }
 
