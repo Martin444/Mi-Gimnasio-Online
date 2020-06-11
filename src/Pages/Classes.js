@@ -110,9 +110,10 @@ const DivClases = styled.div`
     .class-items{
         display: grid;
             grid-template-columns: repeat(1, 1fr);
-            grid-gap: 1em;
-            grid-row-gap: 2em;
-            padding-bottom: 20px;
+            grid-gap: .5em;
+            grid-row-gap: 1em;
+            /* padding-bottom: 20px; */
+            padding: 70px;
     }
 
     .btn-primary {
