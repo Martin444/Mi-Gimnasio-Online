@@ -27,6 +27,7 @@ function App(props) {
       if (user) {
         props.setUser(user);
         props.setLogin(true);
+        console.log(user)
       }
     });
   })
@@ -44,7 +45,7 @@ function App(props) {
               </Modal>
               <Switch>
                 <Route exact path= "/" component={Home} props={showModal}/>
-                <Route exact path= "/clases" component={Classes}/>
+                <Route exact path= "/clases" component={Classes} props={showModal}/>
               </Switch>
             <Footer/>
         </div>

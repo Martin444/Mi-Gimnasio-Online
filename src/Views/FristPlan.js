@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import CardClass from '../Components/CardClass'
-import Pesas from '../images/pesas1.jpg'
+import CrossTrain from '../images/crosstra.jpg'
+import Funcional from '../images/funcional1.jpg'
+import Localizada from '../images/localizada.jpg'
 
 export default function FristPlan(props) {
 
@@ -15,9 +17,9 @@ export default function FristPlan(props) {
                 <h1>CLASES DISPONIBLES</h1>
                 <span>No pongas más excusas y elegí tu primera clase</span>
                 <div className="cards">
-                    <CardClass title="ENTRENAMIENTO FUNCIONAL" image={Pesas} onChannge={handleClick} close={props.close}/>
-                    <CardClass title="CROSS TRAINING" image={Pesas} onChannge={handleClick}/>
-                    <CardClass title="LOCALIZADA" image={Pesas} onChannge={handleClick}/>
+                    <CardClass title="ENTRENAMIENTO FUNCIONAL" image={Funcional} onChannge={handleClick} close={props.close}/>
+                    <CardClass title="CROSS TRAINING" image={Localizada} onChannge={handleClick} close={props.close}/>
+                    <CardClass title="LOCALIZADA" image={CrossTrain} onChannge={handleClick} close={props.close}/>
                 </div>
             </div>
         </DivPlan>

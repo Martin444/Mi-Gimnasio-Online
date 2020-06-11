@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import Nov from '../images/banner1.jpg'
 import CardClass from '../Components/CardClass'
@@ -17,6 +17,12 @@ import Rutina from '../images/rutina.webp'
 import Ritmos2 from '../images/ritmos2.jpg'
 import Ritmos3 from '../images/ritmos3.webp'
 import Esfera from '../images/esfera.webp'
+
+
+import Modal from '../Components/Modal'
+import Login from '../Components/Login'
+import Form from '../Components/Form'
+
 import { connect } from 'react-redux'
 
 
@@ -26,8 +32,22 @@ function Classes(props) {
         console.log("Hola");
     };
 
+    const [modal, setModal] = useState(false);
+
+    const showModal = () => {
+        setModal(!modal)
+    }
+
     return (
         <div>
+            <Modal show={modal} close={showModal}>
+                {
+                    props.login ?
+                    <Form/>
+                    :
+                    <Login close={showModal}/>
+                }
+            </Modal>
             <DivClases>
                 {
                     props.login ?
@@ -36,31 +56,31 @@ function Classes(props) {
                     <h1>Mira todas las clases que tenemos para ti</h1>
                 }
                  <div  className="class-items">
-                 <CardClass title="CLASES MIX" image={Clasesmix} onChannge={handleClick}/>
-                    <CardClass title="RITMOS" image={Ritmos} onChannge={handleClick}/>
-                    <CardClass title="ZUMBA FITNESS" image={ZumbaFit} onChannge={handleClick}/>
+                 <CardClass title="CLASES MIX" image={Clasesmix} onChannge={handleClick} close={showModal}/>
+                    <CardClass title="RITMOS" image={Ritmos} onChannge={handleClick} close={showModal}/>
+                    <CardClass title="ZUMBA FITNESS" image={ZumbaFit} onChannge={handleClick} close={showModal}/>
                  </div>
                  <div  className="class-items">
-                 <CardClass title="TABATA" image={Tabata} onChannge={handleClick}/>
-                    <CardClass title="ZUMBA GOLD" image={ZumbaGold} onChannge={handleClick}/>
-                    <CardClass title="G.A.P LOCAL" image={Gap} onChannge={handleClick}/>
+                 <CardClass title="TABATA" image={Tabata} onChannge={handleClick} close={showModal}/>
+                    <CardClass title="ZUMBA GOLD" image={ZumbaGold} onChannge={handleClick} close={showModal}/>
+                    <CardClass title="G.A.P LOCAL" image={Gap} onChannge={handleClick} close={showModal}/>
                  </div>
                  {
                      props.login ?
                      <div  className="class-items">
-                        <CardClass title="PILATES MAT" image={Pilates} onChannge={handleClick}/>
-                        <CardClass title="CIRCUITO DE FUERZA" image={Circuito} onChannge={handleClick}/>
-                        <CardClass title="PERSONAL TRAINER" image={Personal} onChannge={handleClick}/>
-                        <CardClass title="LATINO" image={Latino} onChannge={handleClick}/>
-                        <CardClass title="CIRCUITO INTERMITENTE" image={Circuito2} onChannge={handleClick}/>
-                        <CardClass title="RUTINAS 100%" image={Rutina} onChannge={handleClick}/>
-                        <CardClass title="RITMOS LATINOS" image={Ritmos2} onChannge={handleClick}/>
-                        <CardClass title="RITMOS FIT ROTATIVOS" image={Ritmos3} onChannge={handleClick}/>
-                        <CardClass title="ESFERODINAMIA" image={Esfera} onChannge={handleClick}/>
+                        <CardClass title="PILATES MAT" image={Pilates} onChannge={handleClick} close={showModal}/>
+                        <CardClass title="CIRCUITO DE FUERZA" image={Circuito} onChannge={handleClick} close={showModal}/>
+                        <CardClass title="PERSONAL TRAINER" image={Personal} onChannge={handleClick} close={showModal}/>
+                        <CardClass title="LATINO" image={Latino} onChannge={handleClick} close={showModal}/>
+                        <CardClass title="CIRCUITO INTERMITENTE" image={Circuito2} onChannge={handleClick} close={showModal}/>
+                        <CardClass title="RUTINAS 100%" image={Rutina} onChannge={handleClick} close={showModal}/>
+                        <CardClass title="RITMOS LATINOS" image={Ritmos2} onChannge={handleClick}close={showModal}/>
+                        <CardClass title="RITMOS FIT ROTATIVOS" image={Ritmos3} onChannge={handleClick} close={showModal}/>
+                        <CardClass title="ESFERODINAMIA" image={Esfera} onChannge={handleClick} close={showModal}/>
                     </div>
                         
                     :
-                    <button className="btn-primary">Ver más</button>
+                    <button className="btn-primary" onClick={showModal}>Ver más</button>
                  }
             </DivClases>
         </div>

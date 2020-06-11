@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux';
-import { auth, provider } from '../Utils/firebase';
+import { auth, provider, firestore } from '../Utils/firebase';
 import { setUser, setLogin } from '../actions/index';
 import { withRouter } from 'react-router-dom'
-import { database } from '../Utils/firebase'
 
 function Login(props) {
 
@@ -21,13 +20,15 @@ function Login(props) {
            'photoUrl' : user.photoURL,
            'numberPhone' : user.phoneNumber
             }
-            database.ref('users').push(data)
+
+
+            props.close();
+            firestore.collection("users").doc(user.uid).set(data)
             .then(() =>{
                 props.setUser(user);
                 props.setLogin(true);
                 props.history.push('/clases');
             })
-            props.close();
 
             // Aqui le vamos a agregar el registro a la base de datos
           })

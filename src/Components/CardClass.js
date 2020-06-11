@@ -28,7 +28,7 @@ import { database } from '../Utils/firebase'
                     props.login ?
                     <a href="https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=132871041-c0f935a0-560d-4c03-a72b-438c11fb158f" target="_blanck"><button className="btn-primary" onClick={handleBuy}>Comprar</button></a>
                     :
-                    <button className="btn-primary" onClick={props.close}>Comprar</button>
+                    <button className="btn-primary" onClick={props.close}>Empezar</button>
 
                 }
         </DivCard>
@@ -39,7 +39,7 @@ import { database } from '../Utils/firebase'
 
 const DivCard = styled.div`
     width: 250px;
-    height: 420px;
+    height: 400px;
     background: #fff;
     margin-left: 15%;
     margin-top: 10%;
@@ -54,10 +54,10 @@ const DivCard = styled.div`
 
     img{
         width:100%;
-        height: 250px;
+        height: 220px;
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
-        background-size: contain;
+        background-size: cover;
     }
 
     .btn-primary {
@@ -75,10 +75,12 @@ const DivCard = styled.div`
     }
 
     @media screen and (min-width: 768px){
-        width: 400px;
+        width: 300px;
         margin-top: 0%;
-        margin-left: 7%;
-        margin-right: 7%;
+        margin-left: 20%;
+        margin-right: 20%;
+        align-content: center;
+        text-align: center;
     }
 `
 const mapStateToProps = state => {

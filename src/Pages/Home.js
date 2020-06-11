@@ -3,12 +3,12 @@ import styled from 'styled-components'
 import Nov from '../images/banner1.jpg'
 import fit from '../images/fit1.svg'
 import FristPlan from '../Views/FristPlan'
-import Modal from '../Components/Modal'
 
+import Modal from '../Components/Modal'
 import Login from '../Components/Login'
+import Form from '../Components/Form'
 
 import { connect } from 'react-redux'
-import Form from '../Components/Form'
 
  function Home(props) {
 
