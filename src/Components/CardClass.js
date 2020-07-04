@@ -26,7 +26,7 @@ import { database } from '../Utils/firebase'
                 <h2>{props.title}</h2>
                 {
                     props.login ?
-                    <a href="https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=132871041-c0f935a0-560d-4c03-a72b-438c11fb158f" target="_blanck"><button className="btn-primary" onClick={handleBuy}>Comprar</button></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.martinfarel.migimnasioonline" target="_blanck"><button className="btn-primary" onClick={handleBuy}>Comprar</button></a>
                     :
                     <button className="btn-primary" onClick={props.close}>Comprar</button>
 

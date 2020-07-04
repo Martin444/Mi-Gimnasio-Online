@@ -36,7 +36,7 @@ import { connect } from 'react-redux'
                         <p>La nueva forma de mejorar tus entrenamientos desde tu casa con profesionales</p>
                         {
                             props.login ?
-                            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"> <button className="btn-primary">Contactar</button></a>
+                            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"> <button className="btn-primary">Descargar App</button></a>
                             :
                             <button className="btn-primary" onClick={showModal}>Registrarme</button>
                         }
@@ -95,7 +95,7 @@ const DivHome = styled.div`
     }
 
     .btn-primary {
-        width: 234px;
+        width: 484px;
         height: 42px;
         border: none;
         /* margin-right: 1pc; */
