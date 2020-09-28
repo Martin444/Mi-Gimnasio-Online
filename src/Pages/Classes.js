@@ -111,7 +111,7 @@ const DivClases = styled.div`
         display: grid;
             grid-template-columns: repeat(1, 1fr);
             grid-gap: .5em;
-            grid-row-gap: 1em;
+            grid-row-gap: 1.5em;
             /* padding-bottom: 20px; */
             padding: 70px;
     }
@@ -137,7 +137,7 @@ const DivClases = styled.div`
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 1em;
-            grid-row-gap: 2em;
+            grid-row-gap: 1em;
         }
     }
 `

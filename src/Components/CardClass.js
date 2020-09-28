@@ -41,7 +41,7 @@ const DivCard = styled.div`
     width: 250px;
     height: 420px;
     background: #fff;
-    margin-left: 15%;
+    margin-left: 0;
     margin-top: 10%;
     border-radius: 30px;
     -webkit-box-shadow: 3px 6px 45px -6px rgba(0,0,0,0.65);
@@ -75,7 +75,7 @@ const DivCard = styled.div`
     }
 
     @media screen and (min-width: 768px){
-        width: 400px;
+        width: 300px;
         margin-top: 0%;
         margin-left: 7%;
         margin-right: 7%;

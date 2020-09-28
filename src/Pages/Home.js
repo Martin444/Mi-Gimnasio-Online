@@ -33,12 +33,17 @@ import { connect } from 'react-redux'
                     <img src={fit} alt="Beach resort" className="image"/>
                     <div className="content">
                         <h1>Mi Gimnasio Online</h1>
-                        <p>La nueva forma de mejorar tus entrenamientos desde tu casa con profesionales</p>
                         {
-                            props.login ?
-                            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"> <button className="btn-primary">Descargar App</button></a>
+                            props.login ?<div>
+                                <p>Ahora pagando una cuota mensual $1499 podes acceder a comprar 12 cursos</p>
+                                <a href="https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=132871041-329cbe25-3c04-44fb-9a28-1bbddd9957da" target="_blank" rel="noopener noreferrer"> <button className="btn-primary">Pagar cuota</button></a>
+                            </div>
                             :
-                            <button className="btn-primary" onClick={showModal}>Registrarme</button>
+                            <div>
+                                <p>La nueva forma de mejorar tus entrenamientos desde tu casa con profesionales</p>
+                                <button className="btn-primary" onClick={showModal}>Registrarme</button>
+
+                            </div>
                         }
                     </div>
                 </div>
@@ -95,7 +100,7 @@ const DivHome = styled.div`
     }
 
     .btn-primary {
-        width: 484px;
+        width: 184px;
         height: 42px;
         border: none;
         /* margin-right: 1pc; */
