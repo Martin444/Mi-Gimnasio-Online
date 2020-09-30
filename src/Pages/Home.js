@@ -35,7 +35,7 @@ import { connect } from 'react-redux'
                         <h1>Mi Gimnasio Online</h1>
                         {
                             props.login ?<div>
-                                <p>Ahora pagando una cuota mensual $1499 podes acceder a comprar 12 cursos</p>
+                                <p>Ahora pagando una cuota mensual $1499 podes acceder a comprar 12 clases</p>
                                 <a href="https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=132871041-329cbe25-3c04-44fb-9a28-1bbddd9957da" target="_blank" rel="noopener noreferrer"> <button className="btn-primary">Pagar cuota</button></a>
                             </div>
                             :
