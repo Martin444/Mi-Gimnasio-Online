@@ -21,8 +21,6 @@ function Login(props) {
            'numberPhone' : user.phoneNumber
             }
 
-
-            props.close();
             firestore.collection("users").doc(user.uid).set(data)
             .then(() =>{
                 props.setUser(user);

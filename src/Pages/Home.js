@@ -22,9 +22,6 @@ import { connect } from 'react-redux'
         <div>
             <Modal show={modal} close={showModal}>
                 {
-                    props.login ?
-                    <Form/>
-                    :
                     <Login/>
                 }
             </Modal>

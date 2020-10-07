@@ -57,25 +57,16 @@ function Navbar (props) {
                                 <Link to="/clases">Clases</Link>
                             </li>
                         </button>
-                        <button type="button"  
-                        onClick={handleToggle}
-                        className="nav-btn2">
-                            <li>
-                            <a onClick={props.showModal}>
-                                Formulario para Profesores
-                            </a>
-                            </li>
-                        </button>
                         {
                             props.login &&
                                 <button type="button"  
-                                onClick={handleToggle}
-                                className="nav-btn2">
-                                    <li>
-                                    <a onClick={logoutFacebook}>
-                                        Cerrar sesión
-                                    </a>
-                                    </li>
+                                    onClick={handleToggle}
+                                    className="nav-btn2">
+                                        <li>
+                                            <a onClick={logoutFacebook}>
+                                                Cerrar sesión
+                                            </a>
+                                        </li>
                                 </button>
 
                         }
