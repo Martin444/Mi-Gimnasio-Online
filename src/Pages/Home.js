@@ -22,7 +22,7 @@ import { connect } from 'react-redux'
         <div>
             <Modal show={modal} close={showModal}>
                 {
-                    <Login/>
+                    <Login close={showModal}/>
                 }
             </Modal>
             <DivHome>
@@ -39,7 +39,6 @@ import { connect } from 'react-redux'
                             <div>
                                 <p>La nueva forma de mejorar tus entrenamientos desde tu casa con profesionales</p>
                                 <button className="btn-primary" onClick={showModal}>Registrarme</button>
-
                             </div>
                         }
                     </div>

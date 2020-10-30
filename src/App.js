@@ -13,6 +13,7 @@ import Modal from './Components/Modal'
 
 import Login from './Components/Login'
 import Form from './Components/Form';
+import Registro from './Pages/Registro';
 
 function App(props) {
 
@@ -46,6 +47,7 @@ function App(props) {
               <Switch>
                 <Route exact path= "/" component={Home} props={showModal}/>
                 <Route exact path= "/clases" component={Classes} props={showModal}/>
+                <Route exact path= "/registro" component={Registro} props={showModal}/>
               </Switch>
             <Footer/>
         </div>

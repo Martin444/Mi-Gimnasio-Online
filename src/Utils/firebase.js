@@ -23,3 +23,4 @@ import 'firebase/firebase-firestore'
   export const database = firebase.database();
 
   export const provider = new firebase.auth.GoogleAuthProvider();
+  export const providerE = new firebase.auth.EmailAuthProvider();
