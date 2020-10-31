@@ -51,7 +51,7 @@ function Classes(props) {
             <DivClases>
                 {
                     props.login ?
-                    <h1>Hola {props.user.displayName}! Que bueno verte</h1>
+                    <h1>Hola {props.user.name}! Que bueno verte</h1>
                     :
                     <h1>Mira todas las clases que tenemos para ti</h1>
                 }
