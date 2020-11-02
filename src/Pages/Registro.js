@@ -18,6 +18,7 @@ function Registro(props) {
             .then(({ user })=>{
                 const data = {
                     'date': newDate,
+                    'uid': user.uid,
                     'name' : form.get('name'),
                     'email' : user.email,
                     'photoURL' : 'https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
