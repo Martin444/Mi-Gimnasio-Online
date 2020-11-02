@@ -28,7 +28,7 @@ import { database } from '../Utils/firebase'
                     props.login ?
                     <a href="https://play.google.com/store/apps/details?id=com.martinfarel.migimnasioonline" target="_blanck"><button className="btn-primary" onClick={handleBuy}>Comprar</button></a>
                     :
-                    <button className="btn-primary" onClick={props.close}>Comprar</button>
+                    <button className="btn-primary" onClick={props.close}>Ver</button>
 
                 }
         </DivCard>
