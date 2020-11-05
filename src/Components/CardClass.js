@@ -26,7 +26,7 @@ import { database } from '../Utils/firebase'
                 <h2>{props.title}</h2>
                 {
                     props.login ?
-                    <a href="https://play.google.com/store/apps/details?id=com.martinfarel.migimnasioonline" target="_blanck"><button className="btn-primary" onClick={handleBuy}>Comprar</button></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.martinfarel.migimnasioonline" target="_blanck"><button className="btn-primary" onClick={handleBuy}>Ver</button></a>
                     :
                     <button className="btn-primary" onClick={props.close}>Ver</button>
 
